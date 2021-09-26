@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+// Define your service using the "service" keyword 
+service DummyService {
+    // Define rpc methods with request and response types
+    // gRPC allows 4 types of rpc methods: simple RPC, server-side streaming, client-side streaming and bidirectional streaming
+    // defining simple rpc method where client sends request and waits for response
+    rpc SayHello(Message) returns (Message) {}
+}
+
+// gRPC utilizes protocol buffer (protobufs) data format
+
+// Define the structure of protobuf messages
+message Message {
+    string body = 1;
+}
